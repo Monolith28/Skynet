@@ -1,0 +1,6 @@
+23 min:  Offices -> Assembly Hall -> Gymnasium -> Staff Room -> Classrooms -> Technical Block -> Offices
+23 min:  Offices -> Technical Block -> Classrooms -> Staff Room -> Gymnasium -> Assembly Hall -> Offices
+25 min:  Offices -> Gymnasium -> Assembly Hall -> Staff Room -> Classrooms -> Technical Block -> Offices
+25 min:  Offices -> Technical Block -> Classrooms -> Staff Room -> Assembly Hall -> Gymnasium -> Offices
+25 min:  Offices -> Assembly Hall -> Gymnasium -> Assembly Hall -> Staff Room -> Classrooms -> Technical Block -> Offices
+25 min:  Offices -> Technical Block -> Classrooms -> Staff Room -> Assembly Hall -> Gymnasium -> Assembly Hall -> Offices

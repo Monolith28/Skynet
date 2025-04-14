@@ -46,7 +46,6 @@ class Network:
 
     def take_path(self, start: str, end: str):
         #if this threshold is exeeded, stop looking down this road
-        hardmax = 26
         paths = []
         path = []
         path_length = 0
@@ -55,7 +54,7 @@ class Network:
 
         path.append(current)
 
-        while path_length < 23:
+        while path_length < 26:
             next = self.next(current)
             path_length += current.edges[next]
             path.append(next)
@@ -92,9 +91,12 @@ class Network:
 
     def print_path(self, path: list):
         print_string = ""
+        print_paragraph = ""
         for vertex in path[1]:
             print_string += f"{vertex.name} -> "
-        print(f"{path[0]} min:  {print_string[:-4]}")
+        return f"{path[0]} min:  {print_string[:-4]}"
+
+        
 
         
     def __str__(self):
@@ -119,15 +121,19 @@ def main():
         if mypath[0] not in paths:
             paths[mypath[0]] = [mypath]
         else:
-            paths[mypath[0]].append(mypath)
+            if mypath not in paths[mypath[0]]:
+                paths[mypath[0]].append(mypath)
     
     #sort the dictionary
     paths = dict(sorted(paths.items()))
 
-    for time in paths.keys():
-        if time < 24:
-            for path in paths[time]:
-                network.print_path(path)
+
+    with open('shortpaths.txt', 'w') as new_file:
+        for time in paths.keys():
+            if time < 26:
+                for path in paths[time]:
+                    new_file.write(f"{network.print_path(path)}\n")
+                    print(network.print_path(path))
 
 
 main()
